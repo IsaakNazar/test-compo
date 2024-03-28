@@ -1,0 +1,21 @@
+<app-header></app-header>
+<div class="container">
+  <div class="product">
+    <div class="link_tree">
+      <small>Каталог</small><span>/</span>
+      <small>Обувь</small><span>/</span>
+      <small>Кроссовки</small><span>/</span>
+      <small>Беговые</small>
+    </div>
+    @if (product$ | async; as product) {
+      <h1>{{product.name.toUpperCase()}}</h1>
+      <app-product-details [product]="product"></app-product-details>
+    }
+  </div>
+
+  <div class="divider"></div>
+
+  <app-footer></app-footer>
+
+</div>
+

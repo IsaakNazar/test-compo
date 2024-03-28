@@ -1,0 +1,12 @@
+<img [src]="images[0]" alt="shoe" class="img_main rounded-3">
+<div class="d-flex img_secondary">
+  <div class="wrap-arrow d-flex align-items-center justify-content-center rounded-2">
+    <img src="assets/icons/arrow-left.png" alt="arrow-left">
+  </div>
+  @for (img of images;track img) {
+    <img [src]="img" alt="shoe" class="img_small rounded-3">
+  }
+  <div class="wrap-arrow d-flex align-items-center justify-content-center rounded-2">
+    <img src="assets/icons/arrow-right.png" alt="arrow-right">
+  </div>
+</div>

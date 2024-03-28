@@ -1,0 +1,95 @@
+@if (product) {
+  <div class="area">
+    <div class="area-img">
+      <app-product-image [images]="product.images"></app-product-image>
+    </div>
+
+    <div class="details d-flex">
+      <div class="area-price">
+        <div class="area-price_before font14">{{ product.price | money }} цена без скидки</div>
+        <div class="d-flex align-items-center area-price_after">
+          <h1>{{ product.discountPrice | money }} Р</h1>
+          <div class="area-price_discount rounded-1 text-bold">-{{ product.discount }}%</div>
+        </div>
+
+        <div class="d-flex align-items-center">
+          <div class="area-price_amount rounded-2 bold-14">{{ product.amountInPackage }} штук в уп.</div>
+          <div class="d-flex align-items-center">
+            <img src="assets/toggle.png" alt="toggle" class="area-price_toggle">
+          </div>
+          <div class="bold-14">Заказ упаковкой</div>
+        </div>
+
+        <div class="divider area-price_divider"></div>
+
+        <div class="area-price_grid">
+          <p class="bold-14">Завтра</p>
+          <p class="bold-14">7 шт.</p>
+          <p class="bold-14">7 шт.</p>
+          <small>Доставка</small>
+          <small>Тарасовка</small>
+          <small>Тарасовка</small>
+        </div>
+
+        <div class="area-price_btn d-flex">
+          @if((counter$ | async) === 0) {
+            <app-info-btn (click)="increase()" btnClass="rounded-2" [primary]="true">
+              <img src="assets/icons/basket-white.png" alt="basket" class="me-1">
+              <span>В Корзину</span>
+            </app-info-btn>
+          } @else {
+            <div class="counter rounded-2 d-flex align-items-center justify-content-between">
+              <img src="assets/icons/minus.png" alt="minus" (click)="decrease()">
+              <div class="bold-16">{{ counter$ | async }} {{counts}}</div>
+              <img src="assets/icons/plus.png" alt="plus" (click)="increase()">
+            </div>
+          }
+
+          <app-info-btn btnClass="rounded-2">
+            <img src="assets/icons/heart-active.png" alt="heart">
+          </app-info-btn>
+        </div>
+      </div>
+
+      <div class="area-details">
+        <h3>Характеристики</h3>
+        <div class="area-details_grid">
+          <div>
+            <p class="bold-14">{{ product.details.supplierCode }}</p>
+            <small>Код поставщика</small>
+          </div>
+          <div>
+            <p class="bold-14">{{ product.details.vendorCode }}</p>
+            <small>Артикул</small>
+          </div>
+          <div>
+            <p class="bold-14">{{ product.details.raekCode }}</p>
+            <small>Код РАЭК</small>
+          </div>
+          <div>
+            <p class="bold-14">{{ product.details.etmCode }}</p>
+            <small>Код ЕТМ</small>
+          </div>
+          <div>
+            <p class="bold-14">{{ product.details.brand }}</p>
+            <small>Бренд</small>
+          </div>
+          <div>
+            <p class="bold-14">{{ product.details.part }}</p>
+            <small>Серия</small>
+          </div>
+          <div>
+            <p class="bold-14">{{ product.details.manufacturerCode }}</p>
+            <small>Код производителя</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="area-desc">
+      <h2>Описание товара</h2>
+      <p>{{ product.description }}</p>
+    </div>
+  </div>
+}
+

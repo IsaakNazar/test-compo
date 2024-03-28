@@ -1,0 +1,28 @@
+@import "variables";
+:host {
+  height: 100%;
+}
+
+.px-1 {
+  padding: 0 20px;
+}
+
+.px-2 {
+  padding: 0 10px;
+}
+
+.wrapper {
+  cursor: pointer;
+}
+
+.primary {
+  background: $primary;
+  color: white;
+  border: 1px solid $primary;
+}
+
+.secondary {
+  background: $light-blue;
+  color: $primary;
+  border: 1px solid $light-blue;
+}

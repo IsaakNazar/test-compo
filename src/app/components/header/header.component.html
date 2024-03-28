@@ -1,0 +1,57 @@
+<div class="header header-grid">
+  <img src="assets/logo.png" alt="logo" class="header-logo">
+
+  <app-info-btn btnClass="rounded-2" [primary]="true">
+    <img src="assets/icons/hamburger.png" alt="basket" class="me-1">
+    <span>Меню</span>
+  </app-info-btn>
+
+  <div class="header-input rounded-2 d-flex align-items-center">
+    <input type="text" placeholder="Название запроса" class="rounded-2 text-bold">
+    <div class="d-flex">
+      <img src="assets/icons/cross.png" alt="cross">
+      <img src="assets/icons/search.png" alt="search">
+    </div>
+  </div>
+
+  <img src="assets/icons/bell.png" alt="bell">
+
+  <div class="header-vertical_divider"></div>
+
+  <img src="assets/icons/heart-gray.png" alt="gray heart">
+
+  @if (profile$ | async; as profile) {
+    <app-info-btn btnClass="px-1 rounded-2">
+      <img src="assets/icons/basket.png" alt="basket" class="me-1">
+      <span>{{profile.pocket | money}}P</span>
+    </app-info-btn>
+
+    <div class="header-profile d-flex align-items-center">
+      <img [src]="profile.profileImage" alt="profile" class="rounded-2">
+      <p class="bold-14 header-profile_name">{{profile.lastName}} {{profile.firstName.slice(0, 1)}}.</p>
+      <img src="assets/icons/arrow-down.png" alt="arrow down">
+    </div>
+  }
+
+</div>
+<div class="divider"></div>
+<section class="sub-menu d-flex align-items-center">
+  <div class="d-flex sub-menu-left gap">
+    <a class="bold-14">Мои заказы</a>
+    <a class="bold-14">Сотрудники</a>
+    <a class="bold-14">Шаблоны заказов</a>
+    <a class="bold-14">Обращения</a>
+  </div>
+
+  <div class="h-100 gap sub-menu-right d-flex align-items-center">
+    <app-info-btn btnClass="px-2 rounded-1">
+      <img src="assets/icons/msg.png" alt="message" class="me-1">
+      <span>Ваш менеджер</span>
+    </app-info-btn>
+    <a class="bold-14">
+      <span class="me-1">%</span>Акции
+    </a>
+    <a class="bold-14">Блог</a>
+  </div>
+</section>
+<div class="divider"></div>

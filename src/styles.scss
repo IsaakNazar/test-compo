@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@import "scss/custom";
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+p, h1, h2, h3 {
+  margin: 0;
+}
+
+small {
+  font-size: 12px;
+  color: $gray-1;
+}
+
+a {
+  text-decoration: none;
+}

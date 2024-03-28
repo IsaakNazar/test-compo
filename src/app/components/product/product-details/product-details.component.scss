@@ -1,0 +1,117 @@
+@import "variables";
+
+.area {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  grid-template-rows: max-content max-content;
+  grid-gap: 48px;
+  grid-template-areas:
+      'img details'
+      'img desc';
+
+  &-img {
+    grid-area: img;
+  }
+
+  .details {
+    grid-area: details;
+    padding-top: 24px;
+  }
+
+  &-price {
+    width: 372px;
+    padding-right: 48px;
+    margin-right: 48px;
+    border-right: 1px solid $lightgray-2;
+
+    h1 {
+      font-size: 32px;
+    }
+
+    &_before {
+      color: $red;
+      font-weight: bolder;
+      margin-bottom: 16px;
+    }
+
+    &_after {
+      margin-bottom: 24px;
+    }
+
+    &_discount {
+      background: $red;
+      color: white;
+      padding: 2px 8px;
+      margin-left: 16px;
+      font-size: 16px;
+    }
+
+    &_amount {
+      background: $lightgray-3;
+      color: $gray-1;
+      padding: 5px 8px;
+      margin-right: 16px;
+    }
+
+    &_toggle {
+      margin-right: 12px;
+    }
+
+    &_divider {
+      margin: 30px 0;
+    }
+
+    &_grid {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    &_btn {
+      display: grid;
+      grid-template-columns: 1fr 72px;
+      gap: 16px;
+      height: 56px;
+
+      .counter {
+        box-shadow: inset 0 0 0 2px $primary;
+        padding: 16px;
+      }
+    }
+  }
+
+  &-details {
+    padding-top: 4px;
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+
+    &_grid {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 20px;
+
+      p {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  &-desc {
+    grid-area: desc;
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 22px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+}
+

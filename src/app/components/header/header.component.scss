@@ -1,0 +1,84 @@
+@import "variables";
+
+.header {
+  padding: 16px 30px;
+  color: $primary-black;
+
+  &-grid {
+    display: grid;
+    grid-template-columns: 144px 130px 1fr 32px 2px 32px max-content max-content;
+    grid-gap: 25px;
+    align-items: center;
+    height: 47px;
+  }
+
+  &-logo {
+    width: 100%;
+  }
+
+  &-input {
+    border: 1px solid $lightgray-1;
+    height: 100%;
+    padding: 0 15px;
+
+    input {
+      width: 100%;
+      border: none;
+      outline: none;
+    }
+    img {
+      height: fit-content;
+
+      &:first-child {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &-vertical_divider {
+    border-left: 1px solid $lightgray-2;
+    height: 100%;
+  }
+
+  &-profile {
+    &_name {
+      margin: 0 15px;
+    }
+    img {
+      width: 32px;
+      height: 32px;
+      object-fit: cover;
+
+      &:last-child {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+.sub-menu {
+  height: 30px;
+  justify-content: space-between;
+  padding: 11px 30px;
+
+  &-left {
+
+    a {
+      color: $primary-black;
+    }
+  }
+
+  &-right {
+    a {
+      color: $primary;
+    }
+  }
+}
+
+.gap {
+  gap: 20px;
+}
+
+
+
